@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Convert PDF files to Word documents online for free. Fast, secure, and easy-to-use PDF to Word converter.">
+    <meta name="keywords" content="PDF to Word, PDF converter, online tools, document conversion">
+    <meta name="author" content="Your Name">
+    <title>Online Tools - PDF to Word Converter</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Header */
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        header p {
+            margin: 10px 0 0;
+            font-size: 1.2rem;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #4CAF50;
+        }
+
+        /* Main Content */
+        main {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Converter Tool Section */
+        #converter-tool {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        #converter-tool input[type="file"] {
+            display: none;
+        }
+
+        #converter-tool label {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #converter-tool label:hover {
+            background-color: #45a049;
+        }
+
+        #converter-tool button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        #converter-tool button:hover {
+            background-color: #45a049;
+        }
+
+        #converter-tool #download-link {
+            display: none;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+        }
+
+        /* Advertisement Section */
+        #advertisement {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav a {
+                margin: 5px 0;
+            }
+        }
+    </style>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_AD_SENSE_ID" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Online Tools</h1>
+        <p>Your one-stop destination for PDF and document tools</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#converter-tool">PDF to Word Converter</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- PDF to Word Converter Tool -->
+        <section id="converter-tool">
+            <h2>PDF to Word Converter</h2>
+            <input type="file" id="pdf-input" accept="application/pdf">
+            <label for="pdf-input">Choose PDF File</label>
+            <button id="convert-btn">Convert to Word</button>
+            <a id="download-link" href="#" download="converted-document.docx">Download Word File</a>
+        </section>
+
+        <!-- Advertisement Section -->
+        <section id="advertisement">
+            <!-- AdSense Ad Unit -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-YOUR_AD_SENSE_ID"
+                 data-ad-slot="YOUR_AD_SLOT_ID"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 Online Tools. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript Functionality for PDF to Word Converter
+        document.getElementById('convert-btn').addEventListener('click', function() {
+            const fileInput = document.getElementById('pdf-input');
+            const downloadLink = document.getElementById('download-link');
+
+            if (fileInput.files && fileInput.files[0]) {
+                const file = fileInput.files[0];
+                const reader = new FileReader();
+
+                reader.onload = function(e) {
+                    // Simulate conversion process (for demonstration purposes)
+                    setTimeout(() => {
+                        // Create a Blob with the converted Word file
+                        const blob = new Blob(["Converted Word Content"], { type: "application/vnd.openxmlformats-officedocument.wordprocessingml.document" });
+                        const url = URL.createObjectURL(blob);
+
+                        // Update download link
+                        downloadLink.href = url;
+                        downloadLink.style.display = 'block';
+                    }, 1000); // Simulate a 1-second delay
+                };
+
+                reader.readAsArrayBuffer(file);
+            } else {
+                alert("Please select a PDF file first.");
+            }
+        });
+    </script>
+</body>
+</html>
